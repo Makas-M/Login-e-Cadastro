@@ -1,6 +1,7 @@
 body {
-   
-    background: rgba(100, 100, 255, 0.5);
+
+   background-image: linear-gradient( to bottom, grey 50%, white);
+   /* background: rgba(100, 50, 255, 0.5);*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,4 +24,17 @@ button {
 
 .form-field {
     margin-bottom: 10px;
+}
+.perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+
+    border: 5px solid white;
+    box-shadow: 3px 3px  10px gray;
+    transition: 0.5s;
+    user-select: none;
+    
+    
+
 }
