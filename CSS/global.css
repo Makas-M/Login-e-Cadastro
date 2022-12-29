@@ -1,0 +1,42 @@
+button {
+    cursor: pointer;
+}
+button:active {
+    opacity: 1;
+}
+button[disabled] {
+    opacity: 0.7;
+}
+
+.clear {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.clear:hover{
+    color: black;
+}
+
+.solid {
+    background: white;
+    border: none;
+    color: rgb(100, 100, 255);
+}
+.solid:hover{
+    color: black;
+}
+.outline {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+.outline:hover{
+    border: green;
+}
+
+.error {
+    background: red;
+    color: white;
+    display: none;
+} 
