@@ -15,9 +15,13 @@ function login() {
         }).catch(
         error => {
             alert(error.code);
-        });
-        
-
+        });    
+}
+function getErrorMessage(error){
+    if(error.code == "auth/user-not-found"){
+        return "usuario nao econtrado";
+    }
+        return error.message;
     
 }
 
