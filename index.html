@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+	<title>Tela de Registo e Login</title>
+</head>
+<link rel="stylesheet"  href="style.css">
+<body>
+	<form>
+		<div>
+			<div><label>Email</label></div>
+			<input id="email" type="email" name="email" placeholder=" seu@email.com" onchange="validateFields()">
+			<div class="erro" id="email-recoverd-error">Email Obrigatório</div>
+			<div class="erro">Email Invalido</div>
+		</div>
+		<div>
+			<div><label>Senha</label></div>
+			<div class="erro">Senha Obrigatória</div>
+			<input id="password" type="password" name="password" placeholder="Senha" onchange="validateFields()">
+		</div>
+		<div>
+			<button type="button" class="clear" id="recover-password-button">Recuperar Senha</button>
+		</div>
+		<div>
+			<button id="login-button" type="button" class="solid" onclick="login()">Entrar</button>
+		</div>
+		<div>
+			<button type="button" class="outline">Registar</button>
+		</div>
+	</form>
+
+<!-- arquivo java script-->
+<script src="script.js"></script>
+</body>
+</html>
