@@ -16,7 +16,7 @@ function showLoading (){
 
 //essa funcao serve para carregar uma classe a partir do nome
 function hideLoading(){
-	const loadings = document.getElementByClassName("loading");
+	const loadings = document.getElementsByClassName("loading");
 	
 	if (loadings.length) {
 		loadings[0].remove();
