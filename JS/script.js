@@ -19,17 +19,32 @@ function login() {
             alert(error.code);
         });    
 }
+//tratamento da mensagem de erro (nao esta a funcionar como deve ser).
 function getErrorMessage(error){
     if(error.code == "auth/user-not-found"){
         return "usuario nao econtrado";
     }
-        return error.message;
-    
+    if(error.code == "auth/wrong-password"){
+        return "senha errada";
+    }
+        return error.message;  
 }
-
+//funcao de acesso a pagina de registro
 function register() {
 
     window.location.href = "pages/register/register.html";
+}
+//funcao de recuperar senha
+function recoverPassoword(){
+    showLoading();
+    firebase.auth().sendPasswordResetEmail(form.email().value).then(() =>{
+        hideLoading();
+        alert('email enviado com sucesso');
+    }).catch(error =>{
+        hideLoading();
+        alert(getErrorMessage(error));
+    });
+
 }
 
 function toggleEmailErrors() {

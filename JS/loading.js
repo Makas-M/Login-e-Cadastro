@@ -7,10 +7,8 @@ function showLoading (){
 //criando uma label com o texto "carregando..." 
 	const label = document.createElement('label');
 		label.innerText = "Carregando...";
-
-//fazer com que a tela de carregar dure 2 segundos.
-	div.appendChild(label);
-	setTimeout(() => hideLoading(), 2000);
+		div.appendChild(label);
+	
 
 }
 
