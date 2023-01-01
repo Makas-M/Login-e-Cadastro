@@ -1,0 +1,17 @@
+body {
+
+   background-image: linear-gradient( to bottom, red 50%, black);
+    height: 100vh;
+}
+form {
+    width: 300px;
+}
+input {
+    border: none;
+}
+
+button {
+    margin-bottom: 10px;
+}
+
+

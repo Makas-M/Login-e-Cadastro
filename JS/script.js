@@ -32,7 +32,7 @@ function getErrorMessage(error){
 //funcao de acesso a pagina de registro
 function register() {
 
-    window.location.href = "pages/register/register.html";
+    window.location.href = "pages/register/registo.html";
 }
 //funcao de recuperar senha
 function recoverPassoword(){
