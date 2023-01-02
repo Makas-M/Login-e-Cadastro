@@ -7,18 +7,23 @@
 	<form>
 		<div class="form-field">
 			<div><label>Email</label></div> 
-			<input type="email" placeholder="seu@email.com" name="email">	
+			<input type="email" placeholder="seu@email.com" id="email" onchange="onChangeEmail()">
+			<div class="error" id="email-required-error">Email é obrigatório</div>
+            <div class="error" id="email-invalid-error">Email é inválido</div>	
 		</div>
 		<div class="form-field">
 			<div><label>Senha</label></div>
-			<input type="password" placeholder="senha" name="password">	
+			<input type="password" placeholder="senha" id="password" onchange="onChangePassword()">	
+			<div class="error" id="password-required-error">Senha é obrigatório</div>
+            <div class="error" id="password-min-length-error">Senha deve ter pelomenos 7 caracteres</div>
 		</div>
 		<div class="form-field">
 			<div><label>Confirmar Senha</label></div>
-			<input type="password" placeholder="confirmar senha" name="password">	
+			<input type="password" placeholder="confirmar senha" id="confirmPassword" onchange="onChangeConfirmPassword()">	
+			<div class="error" id="password-doesnt-match-error">Senha e confirmar senha devem ser iguais</div>
 		</div class="form-field">
 		<div>
-			<button type="button" class="solid">Registar</button>
+			<button type="button" class="solid" disabled="true">Registar</button>
 		</div>
 		<div>
 			<button type="button" class="clear">Login</button>
@@ -30,4 +35,7 @@
 </body>
 	<link rel="stylesheet" href="../../CSS/global.css">
 	<link rel="stylesheet" href="../../CSS/registo.css">
+
+	<script src="../../JS/registo.js"></script>
+	<script src="../../JS/validations.js"></script>
 </html>
