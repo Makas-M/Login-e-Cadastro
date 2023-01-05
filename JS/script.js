@@ -36,7 +36,7 @@ function register() {
 }
 //funcao de recuperar senha
 function recoverPassoword(){
-    showLoading();
+    //showLoading();
     firebase.auth().sendPasswordResetEmail(form.email().value).then(() =>{
         hideLoading();
         alert('email enviado com sucesso');

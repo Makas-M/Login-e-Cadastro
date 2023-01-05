@@ -27,10 +27,10 @@ function onChangeConfirmPassword(){
 }
 
 //funcao para registar
-function registo(){
-	showloading();
+function register(){
+	showLoading();
 	const email = form.email().value;
-	const password = form.password().value
+	const password = form.password().value;
 	firebase.auth().createUserWithEmailAndPassword(
 		email, password
 		).then(()=>{
