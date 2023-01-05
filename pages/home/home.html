@@ -11,6 +11,22 @@
     </header>
 </body>
 <link rel="stylesheet" href="../../CSS/style.css">
+<script>
+	function logout() {
+	var mensagem;
+var retorno = confirm("Deseja realmente sair dessa pagina?");
+if (retorno == true)
+{
+   window.location.href = '../../index.html';
+}
+else
+{
+   window.location.href = 'home.html';
+}
+	
+
+	}
+</script>
 
 <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
