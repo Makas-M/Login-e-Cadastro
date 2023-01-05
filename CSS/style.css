@@ -1,6 +1,6 @@
 body {
 
-   background-image: linear-gradient( to bottom, red 50%, black);
+    background-image: linear-gradient( to bottom, cyan 50%, blue);
     height: 100vh;
 }
 form {

@@ -42,6 +42,9 @@ function register(){
 			alert(getErrorMessage(error));
 		})
 } 
+function login(){
+	window.location.href = "../../index.html"
+}
 
 function getErrorMessage(error){
 	return error.message;
