@@ -2,6 +2,7 @@ body {
 
     background-image: linear-gradient( to bottom, cyan 50%, blue);
     height: 100vh;
+    
 }
 form {
     width: 300px;

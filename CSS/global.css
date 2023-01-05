@@ -1,10 +1,13 @@
 body {
     margin: 0;
+    min-width: 100vw;
+    min-width: 100vw;
 }
 .centralize{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem 4rem;
 }
 button {
     cursor: pointer;
