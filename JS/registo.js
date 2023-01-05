@@ -1,3 +1,4 @@
+
 function onChangeEmail(){
 	const email = form.email().value;
 	form.emailRequiredError().style.display = email ? "none" : "block";
@@ -6,6 +7,7 @@ function onChangeEmail(){
 
 	toggleRegisterButtonDisable();
 }
+//funcao para quando for inserido o password
 
 function onChangePassword(){
 	const password = form.password().value;
@@ -14,6 +16,7 @@ function onChangePassword(){
 
 	toggleRegisterButtonDisable()
 }
+//funcao para quando for inserido a verificacao do password no registo
 
 function onChangeConfirmPassword(){
 	const password = form.password().value;
@@ -22,10 +25,33 @@ function onChangeConfirmPassword(){
  	toggleRegisterButtonDisable()
 
 }
+
+//funcao para registar
+function registo(){
+	showloading();
+	const email = form.email().value;
+	const password = form.password().value
+	firebase.auth().createUserWithEmailAndPassword(
+		email, password
+		).then(()=>{
+			hideLoading();
+			window.location.href = "pages/home/home.html"
+		}
+	).catch(error => {
+			hideLoading();
+			alert(getErrorMessage(error));
+		})
+} 
+
+function getErrorMessage(error){
+	return error.message;
+}
+//funcao para o botao de registro de usuario
 function toggleRegisterButtonDisable(){
 	form.registerButton().disabled = !isFormValid();
 }
 
+//funcao para quando um dos campos de registro foi invalido
 function isFormValid(){
 	const email = form.email().value;
 	if (!email || !validateEmail(email)) {
@@ -41,15 +67,15 @@ function isFormValid(){
 	}
 	return true;
 }
-
+//constantes usadas
 const form = {
 	confirmPassword: () => document.getElementsById('confirmPassword'),
-	confirmPasswordDoesntMatchEror: () => document.getElementById("password-doesnt-match-error")
+	confirmPasswordDoesntMatchEror: () => document.getElementById("password-doesnt-match-error"),
 	email: () => document.getElementById('email'),
 	emailInvalidError: () => document.getElementById('email-invalid-error'),
 	emailRequiredError: () => document.getElementById('email-required-error'), 
-	password: () => document.getElementById('password')
+	password: () => document.getElementById('password'),
 	passwordMinLengthError: () => document.getElementById('password-min-length-error'), 
 	passwordRequiredError: () => document.getElementById('password-required-error'), 
-	registerButton: () => document.getElementById('register-button');
+	registerButton: () => document.getElementById('register-button'),
 }
