@@ -69,7 +69,7 @@ function isFormValid(){
 }
 //constantes usadas
 const form = {
-	confirmPassword: () => document.getElementsById('confirmPassword'),
+	confirmPassword: () => document.getElementById('confirmPassword'),
 	confirmPasswordDoesntMatchEror: () => document.getElementById("password-doesnt-match-error"),
 	email: () => document.getElementById('email'),
 	emailInvalidError: () => document.getElementById('email-invalid-error'),
