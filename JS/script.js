@@ -1,3 +1,5 @@
+
+
 function onChangeEmail() {
     toggleButtonsDisable();
     toggleEmailErrors();
@@ -27,7 +29,7 @@ function getErrorMessage(error){
     if(error.code == "auth/wrong-password"){
         return "senha errada";
     }
-        return error.message;  
+        return error.message;
 }
 //funcao de acesso a pagina de registro
 function register() {
@@ -88,3 +90,9 @@ const form = {
     passwordRequiredError: () => document.getElementById("password-required-error"),
     recoverPasswordButton: () => document.getElementById("recover-password-button"),
 } 
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        window.location.href = "pages/home/home.html";
+
+    }
+})

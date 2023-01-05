@@ -35,7 +35,7 @@ function register(){
 		email, password
 		).then(()=>{
 			hideLoading();
-			window.location.href = "pages/home/home.html"
+			window.location.href = "../../pages/home/home.html"
 		}
 	).catch(error => {
 			hideLoading();
