@@ -1,8 +1,4 @@
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        window.location.href = "pages/home/home.html";
-    }
-})
+
 //o que acontece quando o email e' preenchido;
 function onChangeEmail() {
     toggleButtonsDisable();
@@ -94,3 +90,8 @@ const form = {
     passwordRequiredError: () => document.getElementById("password-required-error"),
     recoverPasswordButton: () => document.getElementById("recover-password-button"),
 } 
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        window.location.href = "pages/home/home.html";
+    }
+})
