@@ -1,15 +1,19 @@
-
-
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        window.location.href = "pages/home/home.html";
+    }
+})
+//o que acontece quando o email e' preenchido;
 function onChangeEmail() {
     toggleButtonsDisable();
     toggleEmailErrors();
 }
-
+//o que acontece queando o campo de senha e' preenchido
 function onChangePassword() {
     toggleButtonsDisable();
     togglePasswordErrors();
 }
-
+//o que acontece quando o usuario clica no botao de login;
 function login() {
     showLoading();
     firebase.auth().signInWithEmailAndPassword(
@@ -21,7 +25,7 @@ function login() {
             alert(error.code);
         });    
 }
-//tratamento da mensagem de erro (nao esta a funcionar como deve ser).
+//tratamento da mensagem de erro (quando o usuario nao esta cadastrado).
 function getErrorMessage(error){
     if(error.code == "auth/user-not-found"){
         return "usuario nao econtrado";
@@ -38,7 +42,7 @@ function register() {
 }
 //funcao de recuperar senha
 function recoverPassoword(){
-    //showLoading();
+    showLoading();
     firebase.auth().sendPasswordResetEmail(form.email().value).then(() =>{
         hideLoading();
         alert('email enviado com sucesso');
@@ -48,7 +52,7 @@ function recoverPassoword(){
     });
 
 }
-
+//erros inerentes ao email
 function toggleEmailErrors() {
     const email = form.email().value;
     form.emailRequiredError().style.display = email ? "none" : "block";
@@ -90,8 +94,3 @@ const form = {
     passwordRequiredError: () => document.getElementById("password-required-error"),
     recoverPasswordButton: () => document.getElementById("recover-password-button"),
 } 
-firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-        window.location.href = "pages/home/home.html";
-    }
-})
